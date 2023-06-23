@@ -1,0 +1,48 @@
+<div class="header bg-gradient-primary pb-6 pt-4 pt-md-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="cent">
+        <div class="col-lg-4">
+          <div class="card card-lift--hover shadow border-0">
+            <div class="card-body py-6">
+              <h2 class="text-primary">Lista de servicios:</h2>
+              <br>
+              <table class="table table-responsive" style="height: 260px; overflow: auto">
+                <tr class="il" *ngFor="let servicio of tabla let i = index; let first = first; let last = last;"
+                (click)= "removeId(servicio)">
+                    <td class="text-uppercase">{{servicio.nombre}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card card-lift--hover shadow border-0">
+            <div class="card-body py-6">
+              <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                <i class="ni ni-building"></i>
+              </div>
+              <div class="text-left">
+                <h3 class="text-primary">Seleccione el encargado:</h3>
+                <div>
+                  <div class="dropdown cent">
+                    <button class="btn btn-outline-secondary btn-lg dropdown-toogle" type="button" id="dropdown2" data-bs-toggle="dropdown" aria-expanded="false">{{dropdown2}}</button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                      <li><a class="dropdown-item" *ngFor="let emp of empleados" (click)= "removeIdE(emp)">{{emp.nombre}} {{emp.apellido}} - {{emp.cargo}}</a></li>
+                    </ul>
+                  </div>
+                </div><br>
+              </div>
+              <h3 class="text-primary">{{servicios}}</h3>
+              <div class="cent"><input class="in" [(ngModel)]="nuevo" placeholder="{{nuevo}}" type="text"></div>
+              <div class="cent"><button type="button" class="btn btn-primary my-4" (click)="si()">Guardar</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+

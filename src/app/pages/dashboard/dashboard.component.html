@@ -1,0 +1,61 @@
+<div class="header bg-gradient-primary pb-5 pt-3 pt-md-5">
+  <div class="container-fluid">
+    <div class="header-body"><br>
+      <!-- Card stats -->
+      <div class="cent">
+
+        <div class="col-lg-5">
+          <div class="card card-lift--hover shadow border-0">
+            <div class="card-body py-5">
+              <h2 class="text-primary">Lista de mensajes:</h2>
+              <table class="table table-responsive" style="width: 400px; height: 300px; overflow: auto">
+                <thead style="background-color: #2e1d50; color: white;">
+                  <td>Nombre</td>
+                  <td>Apellido</td>
+                  <td>Cédula</td>
+                </thead>
+                <tr class="il" *ngFor="let usuario of usuarios let i = index; let first = first; let last = last;"
+                (click)= "removeId(usuario)">
+                    <td class="text-uppercase">{{usuario.nombre}}</td>
+                    <td class="text-uppercase">{{usuario.apellido}}</td>
+                    <td class="text-uppercase">{{usuario.cedula}}</td>
+                </tr>
+              </table>
+              <input class="form-control form-control-alternative" matInput type="text" name="buscador" [(ngModel)]="buscador" (keyup)="buscadorUsuarios()" placeholder="Buscar..">
+            </div>
+          </div>
+        </div>
+
+        <div class="container pt-lg-md">
+          <div class="row justify-content-center">
+            <div class="col-lg-14">
+                  <div class="col-lg-12">
+                      <div class="card bg-gradient-secondary shadow">
+                        <div class="card-body p-lg-5">
+                          <h4 class="mb-1">Mensajería: {{nombre}} {{apellido}}</h4>
+                            <ul id="chat" style="height: 250px; overflow: auto">
+                              <li [ngClass]="{'you': chat.remitente == 'usuario' , 'me': chat.remitente == 'administrador'}" *ngFor="let chat of reverso; let first = first; let last = last;">
+                                <div class="entete">
+                                  <h3>{{chat.fecha}} {{chat.hora}}</h3><br>
+                                  <h2 style="text-transform:uppercase">{{chat.remitente}}:</h2>
+                                </div>
+                                <div class="message">
+                                  {{chat.mensaje}}
+                                </div>
+                              </li>
+                            </ul>
+                          <div class="form-group mb-4">
+                            <textarea class="form-control form-control-alternative" type="text" name="txt" rows="1" cols="80" placeholder="Escriba su mensaje..."[(ngModel)]="txt"></textarea>
+                          </div>
+                          <div>
+                            <button type="button" class="btn btn-default btn-round btn-block btn-lg" (click)="guardarMensaje()">Enviar mensaje</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

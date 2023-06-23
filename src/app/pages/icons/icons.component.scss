@@ -1,0 +1,15 @@
+.cent {
+  display: flex;
+  justify-content: center;
+}
+
+.in { display: block; width: 250px; }
+
+table{
+  cursor: pointer;
+}
+
+.il:hover, .il:focus-within {
+  color: #07e69b;
+  margin: 5px;
+}

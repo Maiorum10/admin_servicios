@@ -1,0 +1,86 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-primary opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+      </div>
+    </div>
+    <div class="container-fluid align-items-center">
+      <div class="row">
+        <div class="col-lg-12 col-md-10">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Datos personales</h3>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label">Nombre</label>
+                        <input disabled type="text" class="form-control form-control-alternative text-uppercase" placeholder="{{nombre}}">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label">Apellido</label>
+                        <input disabled type="text" class="form-control form-control-alternative text-uppercase" placeholder="{{apellido}}">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label">Cédula</label>
+                        <input disabled type="text" class="form-control form-control-alternative text-uppercase" placeholder="{{cedula}}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label">Departamento</label>
+                        <input disabled type="text" class="form-control form-control-alternative text-uppercase" placeholder="{{departamento}}">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label">Cargo</label>
+                        <input disabled type="text" class="form-control form-control-alternative text-uppercase" placeholder="{{cargo}}">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label">Rol</label>
+                        <input disabled type="text" class="form-control form-control-alternative text-uppercase" placeholder="{{rol}}">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <!-- Address -->
+                <h6 class="heading-small text-muted mb-4">Actualizar clave</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-address">Ingrese una clave nueva</label>
+                        <input id="clave" [(ngModel)]="clave" class="in" placeholder="{{clave}}" type="password">
+                        <button type="button" class="btn btn-primary my-4" (click)="guardar()">Guardar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
